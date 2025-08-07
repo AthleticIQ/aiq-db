@@ -161,15 +161,17 @@ export class ExerciseController implements Routes {
           sort: { [sortBy]: sortOrder === 'asc' ? 1 : -1 }
         })
 
-        const searchParam = search ? `&search=${encodeURIComponent(search)}` : ''
-        const sortParams = `&sortBy=${sortBy}&sortOrder=${sortOrder}`
+        const searchParam = search ? `search=${encodeURIComponent(search)}` : ''
+        const sortParams = `sortBy=${sortBy}&sortOrder=${sortOrder}`
+        const additionalParams = [searchParam, sortParams].filter(Boolean).join('&')
+
         const { previousPage, nextPage } = this.buildPaginationUrls(
           origin,
           pathname,
           currentPage,
           totalPages,
           limit,
-          `${searchParam}${sortParams}`
+          additionalParams
         )
 
         return ctx.json({
