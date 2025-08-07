@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Miscellaneous
 *.class
 *.log
@@ -43,3 +44,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+=======
+# deps
+node_modules/
+.env
+dist
+seed
+.vercel
+staging.vercel
+production.vercel
+>>>>>>> 47edce05578665388fa40cfcbd8354ae0db15d89
