@@ -24,7 +24,7 @@ export const PaginationQuerySchema = z.object({
     title: 'Limit',
     description:
       'The maximum number of exercises to return in the response. Limits the number of results for pagination purposes.',
-    maximum: 25,
+    maximum: 100,
     minimum: 1,
     type: 'number',
     example: 10,
